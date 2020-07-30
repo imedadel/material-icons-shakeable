@@ -1,0 +1,37 @@
+{
+	"name": "material-icons-shakeable",
+	"version": "1.0.0",
+	"source": "src/index.js",
+	"main": "dist/material-icons-shakeable.js",
+	"module": "dist/material-icons-shakeable.module.js",
+	"unpkg": "dist/material-icons-shakeable.umd.js",
+	"author": "Imed Adel <aadelimed@gmail.com> (https://twitter.com/imedadel_)",
+	"repository": "https://www.github.com/ImedAdel/material-icons-shakeable",
+	"sideEffects": false,
+	"license": "Apache-2.0",
+	"private": false,
+	"keywords": [
+		"react",
+		"material",
+		"icons",
+		"svg"
+	],
+	"devDependencies": {
+		"@svgr/core": "^5.4.0",
+		"@svgr/plugin-svgo": "^5.4.0",
+		"camelcase": "^6.0.0",
+		"fast-glob": "^3.2.4",
+		"fdir": "^4.0.0",
+		"microbundle": "^0.12.3",
+		"picomatch": "^2.2.2",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	},
+	"peerDependencies": {
+		"react": "^16.13.1"
+	},
+	"scripts": {
+		"build": "rm -rf ./src && rm -rf ./dist && mkdir src && node ./build.js && microbundle --jsx React.createElement --no-compress --name materialIconsShakeable",
+		"prepublishOnly": "yarn build"
+	}
+}
